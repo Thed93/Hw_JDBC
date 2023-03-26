@@ -1,3 +1,5 @@
+package ru.Zinchenko;
+
 import java.util.Objects;
 
 public class Employee {
@@ -92,7 +94,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "City{" +
+        return "ru.Zinchenko.City{" +
                 "id=" + id +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +

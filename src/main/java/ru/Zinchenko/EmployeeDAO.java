@@ -1,3 +1,5 @@
+package ru.Zinchenko;
+
 import java.util.List;
 
 public interface EmployeeDAO {

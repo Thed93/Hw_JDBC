@@ -1,3 +1,5 @@
+package ru.Zinchenko;
+
 import java.util.Objects;
 
 public class City {
@@ -40,7 +42,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "City{" +
+        return "ru.Zinchenko.City{" +
                 "city_id=" + city_id +
                 ", city_name='" + city_name + '\'' +
                 '}';

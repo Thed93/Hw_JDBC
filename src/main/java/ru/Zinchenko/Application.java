@@ -1,3 +1,5 @@
+package ru.Zinchenko;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Application {
                 String firsName = "First_name: " + resultSet.getString("first_name");
                 String lastName = "Last_name: " + resultSet.getString("last_name");
                 String gender = "Gender: " + resultSet.getString("gender");
-                String city = "City: " + resultSet.getString("city_id");
+                String city = "ru.Zinchenko.City: " + resultSet.getString("city_id");
                 int age = resultSet.getInt(5);
 
                 System.out.println(firsName);
@@ -30,20 +32,26 @@ public class Application {
                 System.out.println(city);
                 System.out.println("Age: " + age);
             }
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
+            City city = new City(1, "Moscow");
+            Employee employee = new Employee("Ivan", "Ivanov", "male", 47, 1);
+
+            employeeDAO.addEmployee(employee);
+
+            List<Employee> list = new ArrayList<>(employeeDAO.getAllEmployees());
+
+            for (Employee employee1 : list) {
+                System.out.println(employee1);
+            }
+
+            employeeDAO.updateEmployeeById(3, "Степан", "Логинов", "male", 49, 2);
+
+            System.out.println(employeeDAO.getById(3));
+            employeeDAO.deleteById(4);
 
         }
-        EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
-
-        City city = new City(1, "Moscow");
-        Employee employee = new Employee("Ivan", "Ivanov", "male", 47, 1);
-
-        employeeDAO.addEmployee(employee);
-
-        List<Employee> list = new ArrayList<>(employeeDAO.getAllEmployees());
-
-        for (Employee employee1 : list) {
-            System.out.println(employee1);
-        }
 
         }
+
+
 }
